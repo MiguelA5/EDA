@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados */
+        .profile-card {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-image {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .profile-details {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .profile-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .profile-text {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card profile-card">
+        <img src="tu_foto.jpg" class="card-img-top profile-image" alt="Foto de perfil">
+        <div class="card-body">
+            <div class="profile-details">
+                <h5 class="card-title profile-title" id="nombreUsuario">Nombre de Usuario</h5>
+                <p class="card-text profile-text" id="fechaNacimiento">Fecha de Nacimiento: 01/01/1990</p>
+                <p class="card-text profile-text" id="sexo">Sexo: Masculino</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // JavaScript para llenar los datos del perfil
+    document.addEventListener("DOMContentLoaded", function() {
+        // Obtén los datos del usuario desde tu fuente de datos, por ejemplo, una base de datos o una API.
+        const usuario = {
+            nombre: "Miguel Ortiz",
+            fechaNacimiento: "01/01/2000",
+            sexo: "Masculino",
+            foto: "tu_foto.jpg"
+        };
+
+        // Rellena los elementos del perfil con los datos del usuario.
+        document.getElementById("nombreUsuario").textContent = usuario.nombre;
+        document.getElementById("fechaNacimiento").textContent = `Fecha de Nacimiento: ${usuario.fechaNacimiento}`;
+        document.getElementById("sexo").textContent = `Sexo: ${usuario.sexo}`;
+        document.querySelector(".profile-image").src = usuario.foto;
+    });
+</script>
+</body>
+</html>
